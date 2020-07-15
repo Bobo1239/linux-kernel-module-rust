@@ -29,7 +29,8 @@ else
 KDIR ?= /lib/modules/$(shell uname -r)/build
 CLANG ?= clang
 all:
-	$(MAKE) -C $(KDIR) M=$(CURDIR) CC=$(CLANG) CONFIG_CC_IS_CLANG=y
+	# GCC_PLUGINS_CFLAGS is only required for Arch Linux
+	$(MAKE) -C $(KDIR) M=$(CURDIR) CC=$(CLANG) CONFIG_CC_IS_CLANG=y GCC_PLUGINS_CFLAGS=-Wno-unknown-warning-option
 clean:
 	$(MAKE) -C $(KDIR) M=$(CURDIR) clean
 endif
