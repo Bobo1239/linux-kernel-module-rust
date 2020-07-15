@@ -10,3 +10,6 @@ Module.symvers
 *.o
 modules.order
 dummy.c
+dummy.mod
+.*.cmd
+built-in.a
