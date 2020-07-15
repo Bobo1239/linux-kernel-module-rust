@@ -24,6 +24,9 @@ const INCLUDED_FUNCTIONS: &[&str] = &[
     "get_random_bytes",
     "rng_is_initialized",
     "add_device_randomness",
+    "__pci_register_driver",
+    "pci_unregister_driver",
+    "pci_iomap",
 ];
 const INCLUDED_VARS: &[&str] = &[
     "EINVAL",
@@ -45,6 +48,8 @@ const INCLUDED_VARS: &[&str] = &[
     "SEEK_CUR",
     "SEEK_END",
     "O_NONBLOCK",
+    "ENODEV",
+    "PCI_ANY_ID",
 ];
 const OPAQUE_TYPES: &[&str] = &[
     // These need to be opaque because they're both packed and aligned, which rustc
